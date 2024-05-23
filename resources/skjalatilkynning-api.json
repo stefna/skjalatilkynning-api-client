@@ -1,0 +1,856 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "IslandIs.Skjalatilkynning",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/api/v1/documentindexes/categories": {
+      "get": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_GetCategories",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documentindexes/types": {
+      "get": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_GetTypes",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documentindexes": {
+      "put": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_UpdateDocumentIndex",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentReferenceUpdate"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentReferenceUpdate"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentReferenceUpdate"
+                }
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentReferenceUpdate"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentReferenceUpdate"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "documentReference"
+      },
+      "post": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_PostDocument",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "documents"
+      }
+    },
+    "/api/v1/notifications": {
+      "post": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_PostNotification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "notificationDTOs"
+      }
+    },
+    "/api/v1/documentindexes/withdraw": {
+      "post": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_Withdraw",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentWithdrawn"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentWithdrawn"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentWithdrawn"
+                }
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentWithdrawn"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentWithdrawn"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "documentWithdrawn"
+      }
+    },
+    "/api/v1/documentindexes/read": {
+      "post": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_Read",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentRead"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentRead"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentRead"
+                }
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentRead"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentRead"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Result"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "documentRead"
+      }
+    },
+    "/api/v1/outboundIPs": {
+      "get": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_GetOutboundIPs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{kennitala}/paper": {
+      "get": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_GetPaperPreference",
+        "parameters": [
+          {
+            "name": "kennitala",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/paper": {
+      "get": {
+        "tags": [
+          "Documentindexes"
+        ],
+        "operationId": "Documentindexes_GetPaperPreferenceList",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Document": {
+        "required": [
+          "category",
+          "documentDate",
+          "documentId",
+          "kennitala",
+          "senderKennitala",
+          "senderName",
+          "subject"
+        ],
+        "type": "object",
+        "properties": {
+          "kennitala": {
+            "type": "string"
+          },
+          "documentId": {
+            "type": "string"
+          },
+          "senderKennitala": {
+            "type": "string"
+          },
+          "senderName": {
+            "type": "string"
+          },
+          "authorKennitala": {
+            "type": "string"
+          },
+          "caseId": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "subType": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "documentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "publicationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "notifyOwner": {
+            "type": "boolean"
+          },
+          "minimumAuthenticationType": {
+            "type": "string"
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "DocumentReferenceUpdate": {
+        "type": "object",
+        "properties": {
+          "documentId": {
+            "type": "string"
+          },
+          "updatedDocumentId": {
+            "type": "string"
+          },
+          "kennitala": {
+            "type": "string"
+          }
+        }
+      },
+      "Notification": {
+        "required": [
+          "kennitala",
+          "senderKennitala",
+          "templateId"
+        ],
+        "type": "object",
+        "properties": {
+          "kennitala": {
+            "type": "string"
+          },
+          "senderKennitala": {
+            "type": "string"
+          },
+          "templateId": {
+            "type": "string"
+          },
+          "templateArguments": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "sendEmail": {
+            "type": "boolean"
+          },
+          "publicationDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "DocumentWithdrawn": {
+        "type": "object",
+        "properties": {
+          "kennitala": {
+            "type": "string"
+          },
+          "documentId": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "DocumentRead": {
+        "required": [
+          "documentId",
+          "kennitala"
+        ],
+        "type": "object",
+        "properties": {
+          "kennitala": {
+            "type": "string"
+          },
+          "documentId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0",
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

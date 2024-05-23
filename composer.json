@@ -1,0 +1,33 @@
+{
+	"name": "stefna/skjalatilkynning-api-client",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Ingimar Svanberg Jóhannesson",
+			"email": "ingimar@stefna.is"
+		}
+	],
+	"require": {
+		"php": "^8.2",
+		"ext-json": "*",
+		"stefna/api-client-runtime": "^1.0",
+		"sunkan/enum": "^1.4.0"
+	},
+	"require-dev": {
+		"stefna/php-code-builder": "2.x-dev",
+		"stefna/open-api-generator": "4.x-dev",
+		"stefna/codestyle": "^1.10",
+		"stefna/http-client": "^1.0",
+		"circli/console": "^2.1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"SkjalatilkynningApiClient\\": "generated/",
+			"SkjalatilkynningApiClient\\Common\\": "src/"
+		}
+	},
+	"scripts": {
+		"generate": "vendor/bin/generateApi.php config/generator.php"
+	}
+}
