@@ -3,6 +3,7 @@
 namespace SkjalatilkynningApiClient\Endpoints;
 
 use Stefna\ApiClientRuntime\Endpoint;
+use Stefna\ApiClientRuntime\RequestBody\JsonData;
 use Stefna\ApiClientRuntime\RequestBody;
 
 class GetCategoriesEndpoint implements Endpoint

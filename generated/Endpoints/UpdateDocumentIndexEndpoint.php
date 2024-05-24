@@ -3,6 +3,7 @@
 namespace SkjalatilkynningApiClient\Endpoints;
 
 use Stefna\ApiClientRuntime\Endpoint;
+use Stefna\ApiClientRuntime\RequestBody\JsonData;
 use SkjalatilkynningApiClient\Models\DocumentReferenceUpdate;
 use Stefna\ApiClientRuntime\RequestBody;
 
@@ -38,6 +39,9 @@ class UpdateDocumentIndexEndpoint implements Endpoint
 
 	public function getRequestBody(): ?RequestBody
 	{
+		if ($this->requestBody instanceof RequestBody) {
+			return $this->requestBody;
+		}
 		$return = [];
 		foreach ($this->requestBody as $key => $value) {
 			if ($value instanceof RequestBody) {
