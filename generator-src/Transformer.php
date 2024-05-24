@@ -13,18 +13,17 @@ final class Transformer extends DefaultTransformer
 
 	public function endpointName(string $endpointName, array $info): string
 	{
-		var_dump($endpointName);
 		$map = [
-			"createDocumentindexesDocument" => "CreateDocument",
-			"createDocumentindexesNotification" => "CreateNotification",
-			"documentindexesRead" => "DocumentRead",
-			"documentindexesUpdateDocumentIndex" => "UpdateDocumentIndex",
-			"documentindexesWithdraw" => "Withdraw",
-			"getDocumentindexesCategories" => "GetCategories",
-			"getDocumentindexesOutboundIPs" => "GetOutboundIPs",
-			"getDocumentindexesPaperPreference" => "GetPaperPreference",
-			"getDocumentindexesPaperPreferenceList" => "GetPaperPreferenceList",
-			"getDocumentindexesTypes" => "GetTypes",
+			"createDocumentindexesDocument" => "createDocuments",
+			"createDocumentindexesNotification" => "createNotification",
+			"documentindexesRead" => "documentRead",
+			"documentindexesUpdateDocumentIndex" => "updateDocumentIndex",
+			"documentindexesWithdraw" => "withdraw",
+			"getDocumentindexesCategories" => "getCategories",
+			"getDocumentindexesOutboundIPs" => "getOutboundIPs",
+			"getDocumentindexesPaperPreference" => "getPaperPreference",
+			"getDocumentindexesPaperPreferenceList" => "getPaperPreferenceList",
+			"getDocumentindexesTypes" => "getTypes",
 		];
 		return $map[$endpointName] ?? $endpointName;
 	}

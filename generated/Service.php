@@ -8,7 +8,7 @@ use Stefna\ApiClientRuntime\AbstractService;
 use SkjalatilkynningApiClient\Endpoints\GetCategoriesEndpoint;
 use Stefna\ApiClientRuntime\OpenApi\Exceptions\UnknownResponse;
 use SkjalatilkynningApiClient\Endpoints\GetTypesEndpoint;
-use SkjalatilkynningApiClient\Endpoints\CreateDocumentEndpoint;
+use SkjalatilkynningApiClient\Endpoints\CreateDocumentsEndpoint;
 use SkjalatilkynningApiClient\Models\Result;
 use SkjalatilkynningApiClient\Models\Document;
 use SkjalatilkynningApiClient\Endpoints\UpdateDocumentIndexEndpoint;
@@ -32,7 +32,7 @@ class Service extends AbstractService implements ServiceInterface
 	/**
 	 * @return string[]
 	 */
-	public function GetCategories(): array
+	public function getCategories(): array
 	{
 		$endpoint = new GetCategoriesEndpoint();
 		$response = $this->doRequest($endpoint);
@@ -50,7 +50,7 @@ class Service extends AbstractService implements ServiceInterface
 	/**
 	 * @return string[]
 	 */
-	public function GetTypes(): array
+	public function getTypes(): array
 	{
 		$endpoint = new GetTypesEndpoint();
 		$response = $this->doRequest($endpoint);
@@ -69,9 +69,9 @@ class Service extends AbstractService implements ServiceInterface
 	 * @param Document[] $requestBody
 	 * @return Result[]
 	 */
-	public function CreateDocument(array $requestBody): array
+	public function createDocuments(array $requestBody): array
 	{
-		$endpoint = new CreateDocumentEndpoint($requestBody);
+		$endpoint = new CreateDocumentsEndpoint($requestBody);
 		$response = $this->doRequest($endpoint);
 		$responseCode = $response->getStatusCode();
 		if ($responseCode === 200) {
@@ -88,7 +88,7 @@ class Service extends AbstractService implements ServiceInterface
 	 * @param DocumentReferenceUpdate[] $requestBody
 	 * @return Result[]
 	 */
-	public function UpdateDocumentIndex(array $requestBody): array
+	public function updateDocumentIndex(array $requestBody): array
 	{
 		$endpoint = new UpdateDocumentIndexEndpoint($requestBody);
 		$response = $this->doRequest($endpoint);
@@ -106,7 +106,7 @@ class Service extends AbstractService implements ServiceInterface
 	/**
 	 * @param Notification[] $requestBody
 	 */
-	public function CreateNotification(array $requestBody): object
+	public function createNotification(array $requestBody): object
 	{
 		$endpoint = new CreateNotificationEndpoint($requestBody);
 		$response = $this->doRequest($endpoint);
@@ -121,7 +121,7 @@ class Service extends AbstractService implements ServiceInterface
 	 * @param DocumentWithdrawn[] $requestBody
 	 * @return Result[]
 	 */
-	public function Withdraw(array $requestBody): array
+	public function withdraw(array $requestBody): array
 	{
 		$endpoint = new WithdrawEndpoint($requestBody);
 		$response = $this->doRequest($endpoint);
@@ -140,7 +140,7 @@ class Service extends AbstractService implements ServiceInterface
 	 * @param DocumentRead[] $requestBody
 	 * @return Result[]
 	 */
-	public function DocumentRead(array $requestBody): array
+	public function documentRead(array $requestBody): array
 	{
 		$endpoint = new DocumentReadEndpoint($requestBody);
 		$response = $this->doRequest($endpoint);
@@ -155,7 +155,7 @@ class Service extends AbstractService implements ServiceInterface
 		throw new UnknownResponse($response);
 	}
 
-	public function GetOutboundIPs(): object
+	public function getOutboundIPs(): object
 	{
 		$endpoint = new GetOutboundIPsEndpoint();
 		$response = $this->doRequest($endpoint);
@@ -166,7 +166,7 @@ class Service extends AbstractService implements ServiceInterface
 		throw new UnknownResponse($response);
 	}
 
-	public function GetPaperPreference(string $kennitala): object
+	public function getPaperPreference(string $kennitala): object
 	{
 		$endpoint = new GetPaperPreferenceEndpoint($kennitala);
 		$response = $this->doRequest($endpoint);
@@ -177,7 +177,7 @@ class Service extends AbstractService implements ServiceInterface
 		throw new UnknownResponse($response);
 	}
 
-	public function GetPaperPreferenceList(?int $page = null, ?int $pageSize = null): object
+	public function getPaperPreferenceList(?int $page = null, ?int $pageSize = null): object
 	{
 		$endpoint = new GetPaperPreferenceListEndpoint($page, $pageSize);
 		$response = $this->doRequest($endpoint);

@@ -7,7 +7,7 @@ use Stefna\ApiClientRuntime\RequestBody\JsonData;
 use SkjalatilkynningApiClient\Models\Document;
 use Stefna\ApiClientRuntime\RequestBody;
 
-class CreateDocumentEndpoint implements Endpoint
+class CreateDocumentsEndpoint implements Endpoint
 {
 	public const PATH = '/api/v1/documentindexes';
 

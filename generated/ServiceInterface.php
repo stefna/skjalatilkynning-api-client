@@ -8,7 +8,7 @@ use Stefna\ApiClientRuntime\AbstractService;
 use SkjalatilkynningApiClient\Endpoints\GetCategoriesEndpoint;
 use Stefna\ApiClientRuntime\OpenApi\Exceptions\UnknownResponse;
 use SkjalatilkynningApiClient\Endpoints\GetTypesEndpoint;
-use SkjalatilkynningApiClient\Endpoints\CreateDocumentEndpoint;
+use SkjalatilkynningApiClient\Endpoints\CreateDocumentsEndpoint;
 use SkjalatilkynningApiClient\Models\Result;
 use SkjalatilkynningApiClient\Models\Document;
 use SkjalatilkynningApiClient\Endpoints\UpdateDocumentIndexEndpoint;
@@ -32,47 +32,47 @@ interface ServiceInterface
 	/**
 	 * @return string[]
 	 */
-	public function GetCategories(): array;
+	public function getCategories(): array;
 
 	/**
 	 * @return string[]
 	 */
-	public function GetTypes(): array;
+	public function getTypes(): array;
 
 	/**
 	 * @param Document[] $requestBody
 	 * @return Result[]
 	 */
-	public function CreateDocument(array $requestBody): array;
+	public function createDocuments(array $requestBody): array;
 
 	/**
 	 * @param DocumentReferenceUpdate[] $requestBody
 	 * @return Result[]
 	 */
-	public function UpdateDocumentIndex(array $requestBody): array;
+	public function updateDocumentIndex(array $requestBody): array;
 
 	/**
 	 * @param Notification[] $requestBody
 	 */
-	public function CreateNotification(array $requestBody): object;
+	public function createNotification(array $requestBody): object;
 
 	/**
 	 * @param DocumentWithdrawn[] $requestBody
 	 * @return Result[]
 	 */
-	public function Withdraw(array $requestBody): array;
+	public function withdraw(array $requestBody): array;
 
 	/**
 	 * @param DocumentRead[] $requestBody
 	 * @return Result[]
 	 */
-	public function DocumentRead(array $requestBody): array;
+	public function documentRead(array $requestBody): array;
 
-	public function GetOutboundIPs(): object;
+	public function getOutboundIPs(): object;
 
-	public function GetPaperPreference(string $kennitala): object;
+	public function getPaperPreference(string $kennitala): object;
 
-	public function GetPaperPreferenceList(?int $page = null, ?int $pageSize = null): object;
+	public function getPaperPreferenceList(?int $page = null, ?int $pageSize = null): object;
 
 	public function setSecurityForBearerAuth(string $token): void;
 
