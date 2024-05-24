@@ -12,9 +12,10 @@ class ServerConfiguration extends AbstractServerConfiguration implements Writeab
 {
 	/** @var string[] */
 	protected array $serverUris = [
-		'6666cd76f96956469e7be39d750cc7d9' => '',
+		'Production' => 'https://skjalatilkynning-island-is.azurewebsites.net',
+		'Development' => 'https://test-skjalatilkynning-island-is.azurewebsites.net',
 	];
-	protected string $selectedBaseUri = '6666cd76f96956469e7be39d750cc7d9';
+	protected string $selectedBaseUri = 'Production';
 	/** @var SecurityScheme[] */
 	protected array $securitySchemes = [];
 	/** @var SecurityValue[] */

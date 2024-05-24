@@ -6,7 +6,12 @@
   },
   "servers": [
     {
-      "url": "/"
+      "description": "Production",
+      "url": "https://skjalatilkynning-island-is.azurewebsites.net"
+    },
+    {
+      "description": "Development",
+      "url": "https://test-skjalatilkynning-island-is.azurewebsites.net"
     }
   ],
   "paths": {
