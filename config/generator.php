@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use SkjalatilkynningApiClient\Common\Transformer;
+use SkjalatilkynningApiClient\Generator\Transformer;
 use Stefna\PhpCodeBuilder\Renderer\Php82Renderer;
 
 return [

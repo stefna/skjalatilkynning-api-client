@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace SkjalatilkynningApiClient\Common;
+namespace SkjalatilkynningApiClient\Generator;
 
 use Stefna\OpenApiGenerator\DefaultTransformer;
 

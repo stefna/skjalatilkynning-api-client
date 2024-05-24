@@ -27,6 +27,11 @@
 			"SkjalatilkynningApiClient\\Common\\": "src/"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"SkjalatilkynningApiClient\\Generator\\": "generator-src/"
+		}
+	},
 	"scripts": {
 		"generate": "vendor/bin/generateApi.php config/generator.php"
 	}
