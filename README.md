@@ -1,53 +1,45 @@
 # Skjalatilkynning Api Client
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/stefna/di.svg)](https://packagist.org/packages/stefna/di)
-[![Software License](https://img.shields.io/github/license/stefna/di.svg)](LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/stefna/skjalatilkynning-api-client.svg)](https://packagist.org/packages/stefna/skjalatilkynning-api-client)
+[![Software License](https://img.shields.io/github/license/stefna/skjalatilkynning-api-client.svg)](LICENSE)
 
 Library to communicate with Island.is mailbox ([Pósthólf](https://docs.devland.is/products/postholf/postholf-02-interface-skjalatilkynning))
 
-## Usage
+## Installation
 
-To create an api-client you will need 2 classes
-
-First is a `ServerConfiguration` class that contains information about the api you want to connect to
-
-Example:
-
-The simple way is to use the static `create` method.
-
-But for that method to work you need to have `nyholm/psr7` and `kriswallsmith/buzz` installed since that's the default
-psr implementations we use
-
-```php
-$config = new SkjalatilkynningApiClient\ServerConfiguration(
-	AuthSecurityValue::bearer('token')
-);
-$config->selectServer('Production');
-$service = SkjalatilkynningApiClient\Service::create($config);
-
-
-$response = $service->createDocuments(
-	[
-		new Document(
-			kennitala: '1234567890',
-			documentId: 'd07c8233-0664-48ad-87a3-caf01dbecdd2',
-			senderKennitala: '4234567890',
-			senderName: 'Sender name',
-			category: 'category',
-			subject: 'subject',
-			documentDate: new DateTimeImmutable(),
-		)
-	]
-);
+```
+composer require stefna/skjalatilkynning-api-client
 ```
 
-### Create with custom psr implementations
+## Usage
 
-If you want you can provide your own Client and Request implementations
+### Setup
 
+*Remember to install a PSR-7, PSR-17 and PSR-18*
+
+We recommend `nyholm/psr7` and `kriswallsmith/buzz` to fill does interfaces. 
+If does packages are installed the api-client will auto wire the clients and factories.
+
+**Setup for production use**
 ```php
-$service = new Service(
-	new ServerConfiguration(...),
+$bearerToken = AuthSecurityValue::bearer('token');
+$service = \SkjalatilkynningApiClient\Service::createWithSecurityValues($bearerToken);
+```
+
+**Setup for testing use**
+```php
+$bearerToken = AuthSecurityValue::bearer('token');
+$config = new SkjalatilkynningApiClient\ServerConfiguration($bearerToken);
+$config->selectServer('Development');
+$service = SkjalatilkynningApiClient\Service::create($config);
+```
+
+
+**Setup with custom psr implementations**
+```php
+$bearerToken = AuthSecurityValue::bearer('token');
+$service = new SkjalatilkynningApiClient\Service(
+	new SkjalatilkynningApiClient\ServerConfiguration($bearerToken),
 	new GuzzleHttp\Client(),
 	new GuzzleHttp\Psr7\HttpFactory(),
 );
@@ -55,4 +47,4 @@ $service = new Service(
 
 ## License
 
-View the [LICENSE](LICENSE) file attach to this project.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
